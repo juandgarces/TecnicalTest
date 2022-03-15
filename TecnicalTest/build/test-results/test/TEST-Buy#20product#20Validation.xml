@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Buy product Validation" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-15T16:59:06" hostname="SSMEDLAPPROJG11" time="61.067">
+  <properties/>
+  <testcase name="Add a product to cart" classname="Buy product Validation" time="23.315"/>
+  <testcase name="Validate product increase" classname="Buy product Validation" time="19.432"/>
+  <testcase name="Validate remove Item" classname="Buy product Validation" time="15.599"/>
+  <system-out><![CDATA[?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m?[32m.?[0m]]></system-out>
+  <system-err><![CDATA[mar 15, 2022 11:59:07 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 98.0.4758.102 (273bf7ac8c909cde36982d27f66f3c70846a3718-refs/branch-heads/4758@{#1151}) on port 48391
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1647363551.739][WARNING]: This version of ChromeDriver has not been tested with Chrome version 99.
+mar 15, 2022 11:59:12 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+mar 15, 2022 11:59:31 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 98.0.4758.102 (273bf7ac8c909cde36982d27f66f3c70846a3718-refs/branch-heads/4758@{#1151}) on port 33202
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1647363573.425][WARNING]: This version of ChromeDriver has not been tested with Chrome version 99.
+mar 15, 2022 11:59:34 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+mar 15, 2022 11:59:52 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 98.0.4758.102 (273bf7ac8c909cde36982d27f66f3c70846a3718-refs/branch-heads/4758@{#1151}) on port 36667
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1647363594.628][WARNING]: This version of ChromeDriver has not been tested with Chrome version 99.
+mar 15, 2022 11:59:55 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+]]></system-err>
+</testsuite>

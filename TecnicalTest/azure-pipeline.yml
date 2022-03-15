@@ -1,0 +1,64 @@
+variables:
+  # variable de grupo de artifactory
+  - group: artifactory-produccion
+  # variable de grupos de fluid
+  - group: fluid
+  # Propiedad del sonarQube para indicar el directorio a analizar
+  - name: sonarSources
+    value: 'src/main'
+  # propiedad de sonarQube para indicar los directorios a excluir en el análisis
+  - name: sonarExclusions
+    value: ''
+  # Nuevo sonarqube LTS con permiso de develop, release y master en el mismo proyecto
+  - name: sonarQubeServiceEndpoint
+    value: 'SonarLts'
+  # Nuevo sonarqube LTS con permiso de develop, release y master en el mismo proyecto
+  - name: sonarQubeServiceEndpointGeneric
+    value: 'Sonar-Generic-Lts'
+  # Si proyecto nuevo no existe sonarqube, valor=1(crea master) y después value=0
+  - name: sonarCreateMaster
+    value: '1'
+  # nombre de la tarea para compilar en Gradle
+  - name: taskCommand
+    value: 'clean build --exclude-task test'
+  # Ruta donde se encuentra el gradleWrapperFile en el proyecto
+  - name: gradleWPath
+    value: '$(System.DefaultWorkingDirectory)/gradlew'
+  # Ruta de directorio de trabajo, si no tiene un directorio diferente no cambie el valor por defecto establecido.
+  - name: gradleWorkingDirectory
+    value: '$(System.DefaultWorkingDirectory)'
+
+resources:
+  repositories:
+    - repository: template
+      type: git
+      name: DevOps/_git/templates-yaml
+      ref: refs/heads/master # indicamos la rama que apuntamos en el repositorios template-yaml, siempre debemos apuntar a master
+
+trigger:
+  - trunk
+
+name: $(date:yyyyMMdd)$(rev:.r)
+stages:
+  - stage:
+    jobs:
+      - job:
+        pool:
+          name: Banistmo-Windows-Pool
+          demands:
+          - Agent.Name -equals agent4
+
+        workspace:
+          clean: resources
+
+        steps:
+          - template: build_GRADLE_FUNCTIONAL_TEST_LTS.yml@template #ref en otro repository
+            parameters:
+              sonarQubeServiceEndpoint: ${{variables.sonarQubeServiceEndpoint}}
+              sonarQubeServiceEndpointGeneric: ${{variables.sonarQubeServiceEndpointGeneric}}
+              sonarSources: ${{variables.sonarSources}}
+              sonarExclusions: ${{variables.sonarExclusions}}
+              sonarCreateMaster: ${{variables.sonarCreateMaster}}
+              taskCommand: ${{variables.taskCommand}}
+              gradleWPath: ${{variables.gradleWPath}}
+              gradleWorkingDirectory: ${{variables.gradleWorkingDirectory}}
