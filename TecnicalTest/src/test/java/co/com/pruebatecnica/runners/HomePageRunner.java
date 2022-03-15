@@ -1,4 +1,4 @@
-package pa.com.pruebatecnica.runners;
+package co.com.pruebatecnica.runners;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
